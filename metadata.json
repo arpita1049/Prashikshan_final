@@ -1,0 +1,7 @@
+{
+  "name": "Prashikshan",
+  "description": "An AI-powered internship and career platform connecting students, employers, and colleges with personalized guidance, resume analysis, and interview practice.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

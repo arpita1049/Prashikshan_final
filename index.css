@@ -1,0 +1,82 @@
+
+
+:root {
+  /* Premium Light Mode */
+  --glass-border: rgba(99, 102, 241, 0.1);
+  --glass-surface: rgba(255, 255, 255, 0.85);
+  --grid-color: rgba(99, 102, 241, 0.05);
+  --bg-color: #f0f4f8; /* Softer, cooler white */
+  --text-color: #1e293b;
+  --shadow-color: rgba(99, 102, 241, 0.12);
+  --card-shadow: 0 20px 40px -12px var(--shadow-color);
+}
+
+.dark {
+  /* Deep Dark Mode */
+  --glass-border: rgba(255, 255, 255, 0.05);
+  --glass-surface: rgba(15, 23, 42, 0.6);
+  --grid-color: rgba(255, 255, 255, 0.03);
+  --bg-color: #0b1121;
+  --text-color: #f8fafc;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --card-shadow: none;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Background Grid Pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: linear-gradient(
+      to right,
+      var(--grid-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+  transition: background-image 0.5s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.4);
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.glass-card {
+  background: var(--glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
